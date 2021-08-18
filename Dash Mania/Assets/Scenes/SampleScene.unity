@@ -7338,8 +7338,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2086633494}
+  material: {fileID: 2100000, guid: beb61aa7b1313f445927ec93486c261f, type: 2}
   forwardForce: 1000
   horizontalForce: 25
+  verticalForce: 25
 --- !u!114 &2086633500
 MonoBehaviour:
   m_ObjectHideFlags: 0

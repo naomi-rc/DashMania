@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
-    public float forwardForce = 500f;
-    public float horizontalForce = 1000f;
+    public Material material;
+    public float forwardForce = 2500f;
+    public float horizontalForce = 25f;
+    public float verticalForce = 25f;
     // Start is called before the first frame update
     private void Start()
     {
@@ -24,6 +24,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(-horizontalForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rb.AddForce(0, verticalForce * Time.deltaTime, 0, ForceMode.VelocityChange);
+            //material.color = new Color(Random.value, Random.value, Random.value);
+            
+
         }
     }
 }
