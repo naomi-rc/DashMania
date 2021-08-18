@@ -20,3 +20,4 @@
 
 ## Score and UI
 - C#'s ToString() method can specify precision by just passing it as a string i.e. ToString("0")
+- Add fonts directly from Google (or anywhere else) by dragging the font files into Unity and using them in text objects
