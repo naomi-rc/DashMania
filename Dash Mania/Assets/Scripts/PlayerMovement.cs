@@ -12,19 +12,10 @@ public class PlayerMovement : MonoBehaviour
     {
         movement = Input.GetAxisRaw("Horizontal");
     }
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
-        /*if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rb.AddForce(horizontalForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        }
-        
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            rb.AddForce(-horizontalForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        }    */
         rb.AddForce(movement * horizontalForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
         if (rb.position.y < -1f)

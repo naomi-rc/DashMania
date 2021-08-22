@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public GameObject levelComplete;
     public void EndGame()
     {
-        Debug.Log("Game Over!");
         if (!gameOver)
         {
             gameOver = true;
@@ -18,13 +17,11 @@ public class GameManager : MonoBehaviour
 
     void RestartGame()
     {
-        Debug.Log("Game Restarted!");
        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void CompleteLevel()
     {
-        Debug.Log("Level Complete!");
         levelComplete.SetActive(true);
     }
 }
