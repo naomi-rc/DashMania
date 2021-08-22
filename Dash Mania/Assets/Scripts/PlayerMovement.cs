@@ -7,34 +7,27 @@ public class PlayerMovement : MonoBehaviour
     public float forwardForce = 2500f;
     public float horizontalForce = 25f;
     public float verticalForce = 25f;
-    // Start is called before the first frame update
-    private void Start()
+    float movement = 0f;
+    private void Update()
     {
-       
+        movement = Input.GetAxisRaw("Horizontal");
     }
     // Update is called once per frame
     void FixedUpdate()
     {
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
-        if (Input.GetKey(KeyCode.RightArrow))
+        /*if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.AddForce(horizontalForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
-
+        
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(-horizontalForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        }
+        }    */
+        rb.AddForce(movement * horizontalForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            rb.AddForce(0, verticalForce * Time.deltaTime, 0, ForceMode.VelocityChange);
-            //material.color = new Color(Random.value, Random.value, Random.value);
-            
-
-        }
-
-        if(rb.position.y < -1f)
+        if (rb.position.y < -1f)
         {
             FindObjectOfType<GameManager>().EndGame();
         }
